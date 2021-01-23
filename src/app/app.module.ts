@@ -15,6 +15,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { SettingsComponent } from './settings/settings.component';
 import { RegisterHouseholdComponent } from './register-household/register-household.component';
 import { EmployeeRecordsComponent } from './employee-records/employee-records.component';
+import { MeterReadingComponent } from './meter-reading/meter-reading.component';
+import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EmployeeRecordsComponent } from './employee-records/employee-records.co
     CustomerComponent,
     SettingsComponent,
     RegisterHouseholdComponent,
-    EmployeeRecordsComponent
+    EmployeeRecordsComponent,
+    MeterReadingComponent,
+    RegisterEmployeeComponent
     
   ],
   imports: [
