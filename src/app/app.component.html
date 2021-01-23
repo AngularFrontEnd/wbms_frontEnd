@@ -1,8 +1,8 @@
 <!-- Top Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-fixed topNav">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark fixed-top topNav">
     <a class="navbar-brand" href="#">
         <img width="30" class="bg-white rounded-circle" alt="Angular Logo" src="../assets//img//wbms-logo.png" />
-        <span class="font-weight-bold">&nbsp;WMBS</span>
+        <span class="font-weight-bold">&nbsp;WBMS</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fas fa-bars"></span>
@@ -51,7 +51,7 @@
         </a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
+                <a href="dashboard"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
             </li>
             <li>
                 <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -60,19 +60,19 @@
                 </a>
                 <div class="collapse" id="collapseExample">
                     <div class="bg-white card-body sub-menu">
-                        <li><i class="fas fa-hand-holding-usd"></i> Create Transaction</li>
-                        <li><i class="fa fa-clipboard mr-1"></i> Transaction Records</li>
+                        <li><a href="create-transaction"><i class="fas fa-hand-holding-usd"></i> Create Transaction</a></li>
+                        <li><a href="transaction"><i class="fa fa-clipboard mr-1"></i> Transaction Records</a></li>
                     </div>
                 </div>
             </li>
             <li>
-                <a href="#"><i class="fa fa-users mr-3"></i>Customer</a>
+                <a href="customer"><i class="fa fa-users mr-3"></i>Customer</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-user-tie mr-3"></i>Employee</a>
+                <a href="employee-records"><i class="fas fa-user-tie mr-3"></i>Employee</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-wrench mr-3"></i>Settings</a>
+                <a href="settings"><i class="fas fa-wrench mr-3"></i>Settings</a>
             </li>
         </ul>
     </div>
@@ -125,6 +125,7 @@
             </nav> -->
             <!-- <app-landing-page></app-landing-page> -->
             <!-- <app-settings></app-settings> -->
+            <router-outlet></router-outlet>
 
         </div>
     </div>
@@ -137,7 +138,7 @@
 
 <!-- <app-employee-records></app-employee-records> -->
 
-<app-login></app-login>
+<!-- <app-login></app-login> -->
 
 
 <!-- <app-create-transaction></app-create-transaction> -->
@@ -146,7 +147,7 @@
 
 <!-- <app-customer></app-customer> -->
 
-<router-outlet></router-outlet>
+
 
 <script>
     $("#menu-toggle").click(function(e) {
