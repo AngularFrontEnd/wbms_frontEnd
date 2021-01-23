@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/wmbs-project",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
