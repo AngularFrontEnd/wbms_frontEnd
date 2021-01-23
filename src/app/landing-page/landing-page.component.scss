@@ -9,7 +9,7 @@
 }
 
 .card-counter:hover {
-    box-shadow: 4px 4px 20px #DADADA;
+    box-shadow: 4px 4px 20px #9e9999;
     transition: .3s linear all;
 }
 
@@ -52,7 +52,7 @@
     top: 65px;
     font-style: italic;
     text-transform: capitalize;
-    opacity: 0.5;
+    opacity: 0.8;
     display: block;
     font-size: 18px;
 }
@@ -70,45 +70,26 @@
     }
 }
 
-#top_selling_table {
-    background-color: white;
-}
-
 .mt-2 rounded-circle {
     width: 95%;
     height: 100%;
 }
 
-.list-group {
-    margin-left: 2%;
-}
-
-.card-img-top {
-    height: 100%;
-}
 
 .card-body {
     background-color: #E1DBDB;
     box-shadow: 0px 4px 8px 0px #757575;
 }
 
-.row.container {
-    margin-left: 5%;
-}
 
 .table {
-    background-color: #E1DBDB;
+    background-color: #EFF3F3;
     box-shadow: 0px 4px 8px 0px #757575;
+    width: 100%;
 }
 
 @media screen and (max-width: 991px) {
     .row.container {
         margin-left: 1%;
     }
-}
-
-#divChart {
-    display: block;
-    width: 300px;
-    height: 300px;
 }

@@ -13,7 +13,7 @@ import { MeterReadingComponent } from './meter-reading/meter-reading.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  // { path: '', component: LoginComponent },
   { path: 'dashboard', component: LandingPageComponent },
   { path: 'create-transaction', component: CreateTransactionComponent },
   { path: 'transaction', component: TransactionComponent },

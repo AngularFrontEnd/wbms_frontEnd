@@ -4,7 +4,8 @@
         <img width="30" class="bg-white rounded-circle" alt="Angular Logo" src="../assets//img//wbms-logo.png" />
         <span class="font-weight-bold">&nbsp;WMBS</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fas fa-bars"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
@@ -24,17 +25,19 @@
             </li>
             <li class="nav-item dropdown active">
                 <div class="dropdown">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="30" alt="" />
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                            height="30" alt="" />
                         <span>&nbsp;&nbsp;John Doe</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">My Account</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </div>
-                </div>
-            </li>
-        </ul>
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+    </div>
+    </div>
+    </li>
+    </ul>
     </div>
 </nav>
 
@@ -46,7 +49,7 @@
                 <a href="#">Dashboards</a>
             </li>
             <li>
-                <a href="dashboard"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
+                <a href="#"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
             </li>
             <li>
                 <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -55,55 +58,55 @@
                 </a>
                 <div class="collapse" id="collapseExample">
                     <div class="bg-white card-body sub-menu">
-                        <li> <a href="create-transaction"><i class="fas fa-hand-holding-usd"></i> Create Transaction</a></li>
-                        <li><a href="transaction"><i class="fa fa-clipboard mr-1"></i> Transaction Records</a></li>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="customer"><i class="fa fa-users mr-3"></i>Customer</a>
-            </li>
-            <li>
-                <a href="employee-records"><i class="fas fa-user-tie mr-3"></i>Employee</a>
-            </li>
-            <li>
-                <a href="settings"><i class="fas fa-wrench mr-3"></i>Settings</a>
-            </li>
-        </ul>
+            <li><i class="fas fa-hand-holding-usd"></i> Create Transaction</li>
+            <li><i class="fa fa-clipboard mr-1"></i> Transaction Records</li>
     </div>
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="container d-inline-flex flex-row">
-                <div>
-                    <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i> </a>
-                    </div>
-                </div>
-                <div>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Library</a></li>
-                            <li class="breadcrumb-item" aria-current="page">Data</li>
-                        </ol>
-                    </nav>
+</div>
+</li>
+<li>
+    <a href="#"><i class="fa fa-users mr-3"></i>Customer</a>
+</li>
+<li>
+    <a href="#"><i class="fas fa-user-tie mr-3"></i>Employee</a>
+</li>
+<li>
+    <a href="#"><i class="fas fa-wrench mr-3"></i>Settings</a>
+</li>
+</ul>
+</div>
+<!-- Page Content -->
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="container d-inline-flex flex-row">
+            <div>
+                <div class="col-lg-12">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i> </a>
                 </div>
             </div>
-            <!-- <app-login></app-login> -->
-            <!-- <app-register-employee></app-register-employee> -->
-            <!-- <app-meter-reading></app-meter-reading> -->
-            <!-- <app-register-household></app-register-household> -->
-            <!-- <app-employee-records></app-employee-records> -->
-            <!-- <app-landing-page></app-landing-page> -->
-            <!-- <app-settings></app-settings> -->
-            <!-- <app-create-transaction></app-create-transaction> -->
-            <!-- <app-transaction></app-transaction> -->
-            <!-- <app-customer></app-customer> -->
-            <router-outlet></router-outlet>
-
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Data</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
+        <!-- <app-login></app-login> -->
+        <!-- <app-register-employee></app-register-employee> -->
+        <!-- <app-meter-reading></app-meter-reading> -->
+        <!-- <app-register-household></app-register-household> -->
+        <!-- <app-employee-records></app-employee-records> -->
+        <app-landing-page></app-landing-page>
+        <!-- <app-settings></app-settings> -->
+        <!-- <app-create-transaction></app-create-transaction> -->
+        <!-- <app-transaction></app-transaction> -->
+        <!-- <app-customer></app-customer> -->
     </div>
-
-    <!-- /#page-content-wrapper -->
 </div>
+
+<!-- /#page-content-wrapper -->
+</div>
+
+<router-outlet></router-outlet>

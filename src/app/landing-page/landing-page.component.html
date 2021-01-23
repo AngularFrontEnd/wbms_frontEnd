@@ -1,34 +1,42 @@
 <div id="page-content-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card-counter danger">
-                    <i class="fa fa-ticket"></i>
-                    <span class="count-numbers">599</span>
-                    <span class="count-name">Instances</span>
-                </div>
+    <div class="container-fluid mt-5">
+        <div class="d-inline-flex flex-row col-md-12">
+            <div class="card-counter danger col-md-4">
+                <i class="fa fa-ticket"></i>
+                <span class="count-numbers">599</span>
+                <span class="count-name">Instances</span>
             </div>
-
-            <div class="col-md-3">
-                <div class="card-counter success">
-                    <i class="fa fa-database"></i>
-                    <span class="count-numbers">6875</span>
-                    <span class="count-name">Data</span>
-                </div>
+            <div class="card-counter success col-md-4">
+                <i class="fa fa-database"></i>
+                <span class="count-numbers">6875</span>
+                <span class="count-name">Data</span>
             </div>
-
-            <div class="col-md-3">
-                <div class="card-counter info">
-                    <i class="fa fa-users"></i>
-                    <span class="count-numbers">35</span>
-                    <span class="count-name">Users</span>
-                </div>
+            <div class="card-counter info col-md-4">
+                <i class="fa fa-users"></i>
+                <span class="count-numbers">35</span>
+                <span class="count-name">Users</span>
             </div>
         </div>
     </div>
-    <div class="row container">
-        <div class="col" id="divChart">
-            <canvas id="myChart"></canvas>
+    <div class="container-fluid mt-2 ml-1">
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered" id="top_selling_table">
+                <thead>
+                    <tr>
+                        <td colspan="4" class="text-center h4">
+                            Top Selling Products
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col-md-3">Product Name</th>
+                        <th scope="col-md-3">Product Brand</th>
+                        <th scope="col-md-3">Stock </th>
+                        <th scope="col-md-3">Product per piece </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
