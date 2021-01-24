@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
+import { HttpClient, HttpHeaders}  from '@angular/common/http'
 
 @Component({
   selector: 'app-landing-page',
@@ -8,9 +9,10 @@ import { Chart } from 'node_modules/chart.js';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) {}
 
   ngOnInit(): void {
+    this.onload();
     // var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(myChart, {
       type: 'bar',
@@ -48,6 +50,45 @@ export class LandingPageComponent implements OnInit {
         }
       }
     });
+
+  }
+  numberCustomer;
+  transactionRecordsNumber;
+  employeeNumber;
+  onload(){
+
+    const httpHeaders = new HttpHeaders({
+      Authorization: 'Bearer '+localStorage.getItem("Authorization")
+    });
+
+    // console.log('Bearer '+localStorage.getItem("Authorization"))
+    
+    this.http
+      .get('https://wbm-system.herokuapp.com/api/customer', {
+        headers: httpHeaders
+      })
+      .subscribe(result => {
+        // console.log(result['data'].length);
+        this.numberCustomer =  result['data'].length;
+      });
+
+    this.http
+      .get('https://wbm-system.herokuapp.com/api/transaction', {
+        headers: httpHeaders
+      })
+      .subscribe(result => {
+        // console.log(result['data']);
+        this.transactionRecordsNumber =  result['data'].length;
+      });
+      
+    this.http
+      .get('https://wbm-system.herokuapp.com/api/staff', {
+        headers: httpHeaders
+      })
+      .subscribe(result => {
+        // console.log(result['data']);
+        this.employeeNumber =  result['data'].length;
+      });
   }
 
 }

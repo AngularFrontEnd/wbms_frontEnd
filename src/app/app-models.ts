@@ -12,9 +12,12 @@ export interface createTransactions {
     amount: number;
 }
 
-export interface Customers {
-    houseNo: number;
-    customerName: string;
+export interface Customer {
+    firstName: string;
+    lastName: string;
+    email: string;
+    contactNumber: string;
     address: string;
-    status: string;
-}
+  
+  }
+  

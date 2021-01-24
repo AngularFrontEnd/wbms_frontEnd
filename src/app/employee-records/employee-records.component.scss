@@ -5,10 +5,10 @@
 }
 
 .input-group {
-    float: right;
+    // float: right;
     // width: 50%;
-    margin-left: 50%;
-    margin-right: 2%;
+    margin-left: 30%;
+    // margin-right: 2%;
     margin-top: -5%;
 }
 
@@ -23,12 +23,18 @@
 
 .name {
     float: right;
-    margin-left: 40%;
-    margin-top: -23%;
+    margin-top: -70px;
+    margin-left: 37%;
 }
 
 .position {
     float: right;
-    margin-left: 40%;
-    margin-top: -25;
+    margin-left: 37%;
+    margin-top: -30px;
+}
+
+.card-body {
+    background-color: #006D8F;
+    margin-right: -12px;
+    margin-left: -12px;
 }
