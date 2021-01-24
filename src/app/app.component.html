@@ -42,7 +42,7 @@
     <div id="sidebar-wrapper" class="shadow">
         <ul class="sidebar-nav">
             <li class="sidebar-brand shadow mb-2">
-                <a href="#">Dashboards</a>
+                <a href="dashboard">Dashboards</a>
             </li>
             <li>
                 <a href="dashboard"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
@@ -54,8 +54,8 @@
                 </a>
                 <div class="collapse" id="collapseExample">
                     <div class="bg-white card-body sub-menu">
-                        <li><a href="create-transaction"><i class="fas fa-hand-holding-usd"></i> Create Transaction</a></li>
-                        <li><a href="transaction"><i class="fa fa-clipboard mr-1"></i> Transaction Records</a></li>
+                        <a href="create-transaction"><li><i class="fas fa-hand-holding-usd"></i>Create Transaction</li></a>
+                        <a href="transaction"><li><i class="fa fa-clipboard mr-1"></i> Transaction Records</li></a>
                     </div>
                 </div>
             </li>
@@ -99,7 +99,8 @@
             <!-- <app-create-transaction></app-create-transaction> -->
             <!-- <app-transaction></app-transaction> -->
             <!-- <app-customer></app-customer> -->
-            <router-outlet></router-outlet>
+            <app-customer-view></app-customer-view>
+            <!-- <router-outlet></router-outlet> -->
         </div>
     </div>
 

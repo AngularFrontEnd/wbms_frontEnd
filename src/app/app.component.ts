@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from '@angular/router';
@@ -19,6 +20,7 @@ export class AppComponent {
 
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
+            
     });
 
     console.log('Bearer ' + localStorage.getItem("Authorization"))
@@ -37,6 +39,3 @@ export class AppComponent {
   }
 
 }
-
-
-
