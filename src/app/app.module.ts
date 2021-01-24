@@ -17,6 +17,7 @@ import { RegisterHouseholdComponent } from './register-household/register-househ
 import { EmployeeRecordsComponent } from './employee-records/employee-records.component';
 import { MeterReadingComponent } from './meter-reading/meter-reading.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { CustomerViewComponent } from './customer-view/customer-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RegisterEmployeeComponent } from './register-employee/register-employee
     RegisterHouseholdComponent,
     EmployeeRecordsComponent,
     MeterReadingComponent,
-    RegisterEmployeeComponent
+    RegisterEmployeeComponent,
+    CustomerViewComponent
     
   ],
   imports: [
