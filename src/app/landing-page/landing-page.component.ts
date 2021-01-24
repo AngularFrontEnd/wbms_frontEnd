@@ -80,7 +80,7 @@ export class LandingPageComponent implements OnInit {
         // console.log(result['data']);
         this.transactionRecordsNumber =  result['data'].length;
       });
-
+      
     this.http
       .get('https://wbm-system.herokuapp.com/api/staff', {
         headers: httpHeaders
@@ -91,6 +91,4 @@ export class LandingPageComponent implements OnInit {
       });
   }
 
-
-  
-  }
+}

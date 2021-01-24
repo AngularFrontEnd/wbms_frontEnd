@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Router} from '@angular/router';
 
-// import {CookieService} from 'angular2-cookie/core';
 
 
 @Component({
@@ -15,11 +14,12 @@ export class LoginComponent implements OnInit {
 
   constructor(private http:HttpClient, private router:Router) { }
 
-  ngOnInit(): void {
-  }
   username;
   password;
 
+  ngOnInit(): void {
+  }
+  
   onSubmit(data : any){
     console.log(data);
     this.http.post('https://wbm-system.herokuapp.com/api/login',data)
