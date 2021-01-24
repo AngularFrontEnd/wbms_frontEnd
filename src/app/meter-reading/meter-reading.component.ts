@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
+
 
 @Component({
   selector: 'app-meter-reading',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeterReadingComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,)  { 
+    
+  }
 
   ngOnInit(): void {
   }
@@ -15,6 +20,9 @@ export class MeterReadingComponent implements OnInit {
   houseId;
   meterReading;
 
+  cancelMeterReading() {
+    this.router.navigate(['/create-transaction'])
+  }
 
   getMeterReadingData(data: any) {
     console.log(data);

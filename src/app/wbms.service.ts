@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Injectable({
@@ -6,7 +8,11 @@ import { Injectable } from '@angular/core';
 })
 export class WbmsService {
 
-  
+    
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getData(url: string){
+    return this.http.get(url);
+  }
 }
