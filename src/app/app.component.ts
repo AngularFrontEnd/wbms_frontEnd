@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from '@angular/router';
@@ -38,6 +39,3 @@ export class AppComponent {
   }
 
 }
-
-
-

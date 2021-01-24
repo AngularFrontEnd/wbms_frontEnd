@@ -14,8 +14,12 @@ export class LoginComponent implements OnInit {
 
   constructor(private http:HttpClient, private router:Router) { }
 
+  username;
+  password;
+  
   ngOnInit(): void {
   }
+
   
   onSubmit(data : any){
     console.log(data);
