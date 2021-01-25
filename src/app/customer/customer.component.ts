@@ -15,23 +15,24 @@ export class CustomerComponent implements OnInit {
     private wbmsService: WbmsService
     ) { }
 
-  private url = 'https://wbm-system.herokuapp.com/api/transaction'; //change later to api/transaction/pending-transaction
-    // balhin sa create-transaction
+  private urlGet = 'https://wbm-system.herokuapp.com/api/customer'; 
+  private urlAdd ='https://wbm-system.herokuapp.com/api/customer/create' 
 
-  Tdata;
+  addedCustomer;
+  customerData;
   customers: Customer[];
-  Tarray= [];
+
+
   ngOnInit(): void {
-    this.wbmsService.getData(this.url).subscribe(data => {
-      this.Tdata = data;
-      console.log(data)
-      this.Tdata.data.forEach(element => {
-        // console.log(element.customer);
-        // this.Tarray.push(element.customer)
-      });
-      
+    this.wbmsService.getData(this.urlGet).subscribe(data => {
+      this.customerData = data;
+      console.log(this.customerData)
     })
-    // console.log(this.Tarray);
+
+    // this.wbmsService.addData(this.urlAdd).(data=> {
+    //   this.addedCustomer =data;
+        
+    // })
   }
 }
 

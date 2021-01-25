@@ -18,7 +18,7 @@ export class WbmsService {
     });
     console.log(httpHeaders)
     console.log(url)
-    console.log('Bearer '+localStorage.getItem("Authorization"))
+    console.log('Bearer '+ localStorage.getItem("Authorization"))
 
     return this.http.get(url,{headers: httpHeaders});
   }

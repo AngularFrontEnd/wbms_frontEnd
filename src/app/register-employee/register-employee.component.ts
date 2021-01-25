@@ -11,6 +11,7 @@ export class RegisterEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   firstName;
   lastName;
   middleinitial;
