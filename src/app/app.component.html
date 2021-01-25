@@ -1,5 +1,5 @@
 <!-- Top Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-fixed topNav">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-fixed topNav fixed-top">
     <a class="navbar-brand" href="#">
         <img width="30" class="bg-white rounded-circle" alt="Angular Logo" src="../assets//img//wbms-logo.png" />
         <span class="font-weight-bold">&nbsp;WMBS</span>
@@ -36,16 +36,15 @@
         </ul>
     </div>
 </nav>
-
 <div id="wrapper">
     <!-- FINAL NAV BAR -->
     <div id="sidebar-wrapper" class="shadow">
         <ul class="sidebar-nav">
             <li class="sidebar-brand shadow mb-2">
-                <a href="#">Dashboards</a>
+                <a href="dashboard">Dashboards</a>
             </li>
             <li>
-                <a href="dashboard"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
+                <a [routerLink]="['/dashboard']" [routerLinkActive]="['is-active']"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
             </li>
             <li>
                 <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -53,55 +52,57 @@
                     <i class="float-right fas fa-caret-down mt-3 mr-3"></i>
                 </a>
                 <div class="collapse" id="collapseExample">
-                    <div class="bg-white card-body sub-menu">
-                        <li><a href="create-transaction"><i class="fas fa-hand-holding-usd"></i> Create Transaction</a></li>
-                        <li><a href="transaction"><i class="fa fa-clipboard mr-1"></i> Transaction Records</a></li>
+                    <div class="bg-white= card-body sub-menu">
+                        <a [routerLink]="['/create-transaction']" [routerLinkActive]="['is-active']">
+                            <li><i class="fas fa-hand-holding-usd"></i>Create Transaction</li>
+                        </a>
+                        <a [routerLink]="['/transaction']" [routerLinkActive]="['is-active']">
+                            <li><i class="fa fa-clipboard mr-1"></i> Transaction Records</li>
+                        </a>
                     </div>
                 </div>
             </li>
             <li>
-                <a href="customer"><i class="fa fa-users mr-3"></i>Customer</a>
+                <a [routerLink]="['/customer']" [routerLinkActive]="['is-active']"><i class="fa fa-users mr-3"></i>Customer</a>
             </li>
             <li>
-                <a href="employee-records"><i class="fas fa-user-tie mr-3"></i>Employee</a>
+                <a [routerLink]="['/employee-records']" [routerLinkActive]="['is-active']"><i class="fas fa-user-tie mr-3"></i>Employee</a>
             </li>
             <li>
-                <a href="settings"><i class="fas fa-wrench mr-3"></i>Settings</a>
+                <a [routerLink]="['/settings']" [routerLinkActive]="['is-active']"><i class="fas fa-wrench mr-3"></i>Settings</a>
             </li>
         </ul>
     </div>
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="container d-inline-flex flex-row">
+            <div class="container d-inline-flex flex-row bg-white rounded py-1 ml-2">
                 <div>
                     <div class="col-lg-12">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i> </a>
                     </div>
                 </div>
                 <div>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Library</a></li>
-                            <li class="breadcrumb-item" aria-current="page">Data</li>
-                        </ol>
-                    </nav>
+                    <ol class="breadcrumb bg-transparent mt-2 ">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Data</li>
+                    </ol>
                 </div>
             </div>
-            <!-- <app-login></app-login> -->
-            <!-- <app-register-employee></app-register-employee> -->
-            <!-- <app-meter-reading></app-meter-reading> -->
-            <!-- <app-register-household></app-register-household> -->
-            <!-- <app-employee-records></app-employee-records> -->
-            <!-- <app-landing-page></app-landing-page> -->
-            <!-- <app-settings></app-settings> -->
-            <!-- <app-create-transaction></app-create-transaction> -->
-            <!-- <app-transaction></app-transaction> -->
-            <!-- <app-customer></app-customer> -->
-            <router-outlet></router-outlet>
         </div>
+        <router-outlet></router-outlet>
+        <!-- <app-customer-view></app-customer-view> -->
     </div>
 
-    <!-- /#page-content-wrapper -->
 </div>
+<!-- <app-login></app-login> -->
+<!-- <app-register-employee></app-register-employee> -->
+<!-- <app-meter-reading></app-meter-reading> -->
+<!-- <app-register-household></app-register-household> -->
+<!-- <app-employee-records></app-employee-records> -->
+<!-- <app-landing-page></app-landing-page> -->
+<!-- <app-settings></app-settings> -->
+<!-- <app-create-transaction></app-create-transaction> -->
+<!-- <app-transaction></app-transaction> -->
+<!-- <app-customer></app-customer> -->

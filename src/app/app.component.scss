@@ -109,6 +109,7 @@
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
+    top: 70px;
     left: 255px;
     width: 0;
     height: 100%;
@@ -116,7 +117,7 @@
     margin-bottom: 20%;
     overflow-y: auto;
     // background: rgb(18, 101, 196);
-    background-color: #fff;
+    background: rgb(18, 101, 196);
     border-radius: 8px;
     margin-top: 10px;
     -webkit-transition: all 0.5s ease;
@@ -130,6 +131,7 @@
 }
 
 #page-content-wrapper {
+    margin-top: 60px;
     width: 100%;
     position: absolute;
     padding: 15px;
@@ -160,13 +162,13 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: #ffff;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #000;
-    background: #39b3d8;
+    background: rgb(143, 186, 235);
+    color: #000
 }
 
 .sidebar-nav li a:active,
@@ -186,12 +188,11 @@
 
 .sidebar-nav>.sidebar-brand a:hover {
     color: #000;
-    background: none;
+    // background: white;
 }
 
 .sub-menu>li:hover {
     border-radius: 5px;
-    background: #39b3d8;
 }
 
 @media(min-width:768px) {
@@ -215,4 +216,8 @@
         position: relative;
         margin-right: 0;
     }
+}
+
+.is-active {
+    background: rgb(143, 186, 235);
 }
