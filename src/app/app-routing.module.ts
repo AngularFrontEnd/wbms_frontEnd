@@ -11,6 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { RegisterHouseholdComponent } from './register-household/register-household.component';
 import { MeterReadingComponent } from './meter-reading/meter-reading.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { CustomerViewComponent } from './customer-view/customer-view.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'register-new-household', component: RegisterHouseholdComponent },
   { path: 'meter-reading', component: MeterReadingComponent },
-  { path: 'register-employee', component: RegisterEmployeeComponent }
+  { path: 'register-employee', component: RegisterEmployeeComponent },
+  { path: 'customer-view', component: CustomerViewComponent }
 
 ];
 

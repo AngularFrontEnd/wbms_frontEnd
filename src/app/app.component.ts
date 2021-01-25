@@ -34,9 +34,9 @@ export class AppComponent {
         console.log("--->>",result);
         localStorage.removeItem("Authorization");
         localStorage.clear();
-        this.router.navigate(['/'])
+        
       });
-
+      this.router.navigate(['/'])
   }
 
 }
