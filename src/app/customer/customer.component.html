@@ -22,14 +22,14 @@
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                 <tbody id="tbody" *ngFor="let customer of customerData "> 
+                <tbody id="tbody" *ngFor="let customer of customerData ">
                     <td>{{ customer.firstName }}</td>
                     <td>{{ customer.lastName }}</td>
                     <td>{{ customer.email }}</td>
                     <td>{{ customer.contactNumber }}</td>
                     <td>{{ customer.address }}</td>
-                    <button class="btn btn-primary my-2 ml-2">view</button>
-                </tbody> 
+                    <button class="btn btn-primary my-2 ml-2" [routerLink]="['/customer-view']">view</button>
+                </tbody>
             </table>
         </div>
         <div class="d-flex justify-content-end my-2">
