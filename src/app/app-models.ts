@@ -1,15 +1,17 @@
-export interface transactionRecords {
+export interface TransactionRecords {
     houseNo: number;
     customerName: string;
     waterConsumption: number;
-    amount: number;
+    total_amount: number;
+    rendered_amount: number;
 }
 
-export interface createTransactions {
-    houseNo: number;
-    customerName: string;
-    waterConsumption: number;
-    amount: number;
+export interface CreateTransaction {
+    firstName: string;
+    lastName: string;
+    email: string;
+    contactNumber: string;
+    address: string;
 }
 
 export interface Customer {
@@ -20,4 +22,3 @@ export interface Customer {
     address: string;
   
   }
-  

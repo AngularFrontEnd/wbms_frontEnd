@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { transactionRecords } from '../app-models';
+import { TransactionRecords } from '../app-models';
+import { Router } from '@angular/router';
+import { WbmsService } from '../wbms.service';
 
 @Component({
   selector: 'app-transaction',
@@ -8,22 +10,35 @@ import { transactionRecords } from '../app-models';
 })
 export class TransactionComponent implements OnInit {
 
+  constructor(
+    private router: Router,
+    private wbmsService: WbmsService
+  ) { }
+  private url = 'https://wbm-system.herokuapp.com/api/transaction/paid-transaction';
 
-  transactionRecords: transactionRecords[]= [
-    {houseNo: 1, customerName: "Juan Tamad", waterConsumption: 300, amount: 2300},
-    {houseNo: 2, customerName: "Pedro Penduko", waterConsumption: 420, amount: 3200},
-    {houseNo: 3, customerName: "Jin Mori", waterConsumption: 280, amount: 2000 }
-  ]
-
-  houseNo = 0;
-  customerName = '';
-  waterConsumption = 0;
-  amount = 0;
-
-
-  constructor() { }
+  paidTransactionData;
+  transactionRecords: TransactionRecords[];
+  paidTransactionArray = [];
 
   ngOnInit(): void {
+    this.wbmsService.getData(this.url).subscribe(data => {
+      this.paidTransactionData = data;
+      this.paidTransactionData.forEach(element => {
+        let sample = { houseNumber: '', customerName: '', address: '', meterReading: '', rendered_amount: '', total_amount: '', change: '', transacted_by: '' }
+        sample.houseNumber = element.customer_id;
+        sample.customerName = element.customer.firstName + ' ' + element.customer.lastName;
+        sample.address = element.customer.address;
+        sample.rendered_amount = element.customer.address;
+        sample.meterReading = element.meterReading;
+        sample.rendered_amount = element.rendered_amount;
+        sample.total_amount = element.total_amount;
+        sample.change = element.change;
+        sample.transacted_by = element.transacted_by.firstName;
+        //push to array
+        this.paidTransactionArray.push(sample)
+      });
+    })
+    console.log(this.paidTransactionArray);
   }
 
 }

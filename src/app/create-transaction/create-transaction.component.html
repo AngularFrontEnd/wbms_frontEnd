@@ -21,11 +21,10 @@
                         <th scope="col">Email</th>
                         <th scope="col">Contact Number</th>
                         <th scope="col">Address</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody id="tbody" *ngFor="let customer of Tarray">
+                <tbody id="tbody" *ngFor="let customer of customerArray">
                     <td>{{customer.firstName}}</td>
                     <td>{{customer.lastName}}</td>
                     <td>{{customer.email}}</td>

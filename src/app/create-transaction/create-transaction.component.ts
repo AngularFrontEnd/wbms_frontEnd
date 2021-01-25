@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../app-models';
+import { CreateTransaction } from '../app-models';
 import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
 
@@ -16,33 +16,21 @@ export class CreateTransactionComponent implements OnInit {
     private wbmsService: WbmsService
   ) { }
 
-  private url = 'https://wbm-system.herokuapp.com/api/transaction'; //change later to api/transaction/pending-transaction
-  // balhin sa create-transaction
+  private url = 'https://wbm-system.herokuapp.com/api/transaction/pending-transaction';
 
-  Tdata;
-  customers: Customer[];
-  Tarray = [];
-  data;
-  dataArray = [];
+
+  pendingData;
+  createTransaction: CreateTransaction[];
+  customerArray = [];
+
 
   ngOnInit(): void {
-    // this.wbmsService.getData(this.url).subscribe(data => {
-    //   this.Tdata = data;
-    //   // console.log(data)
-    //   this.Tdata.data.forEach(element => {
-    //     // console.log(element.customer);
-    //     this.Tarray.push(element.customer)
-    //   });
-
-    // })
-    // console.log(this.Tarray);
-
     this.wbmsService.getData(this.url).subscribe(data => {
-      this.data = data
-      this.data.data.array.forEach(element => {
-        console.log(element.data);
-        // this.dataArray.push(element.)
+      this.pendingData = data;
+      this.pendingData.forEach(element => {
+        this.customerArray.push(element.customer)
       });
     })
+    console.log(this.customerArray);
   }
 }
