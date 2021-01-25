@@ -1,10 +1,11 @@
 #page-content-wrapper {
-    width: 100%;
+    width: 97%;
     height: 100%;
     background-color: white;
     margin-top: 20px;
     margin-left: 2.3%;
 }
+
 .header {
     background-color: #00ABD0;
 }
@@ -14,47 +15,42 @@
     border-radius: 50%;
 }
 
-.customerDetails{
+.customerDetails {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
     font-size: 20px;
 }
 
-.buttons{
+.buttons {
     margin-top: -6px;
     height: 80%;
     border-radius: 50%;
     width: 100%;
 }
 
-.customerName{
+.customerName {
     font-size: 40px;
 }
 
-// .deleteBtn, .updateBtn, {
-//     border-radius: 10%;
-//     width: 10%;
-//     height: 40px;
-//     margin-right: 20px
-// }
 
-.customerID{
+.customerID {
     font-size: 20px;
 }
 
-.address, .gmail, .contactNumber {
+.address .gmail .contactNumber {
     font-size: 15px;
 }
 
-.table{
+.table {
     border: 1px solid black;
 }
 
-.paidBtn{
+.paidBtn {
     padding: 0.8px 10px;
     font-size: 10px;
     border-radius: 8px;
 }
-.payBtn{
+
+.payBtn {
     border-radius: 10%;
     padding: 3px 20px;
 }

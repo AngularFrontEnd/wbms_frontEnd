@@ -26,12 +26,12 @@ export class CustomerComponent implements OnInit {
       this.Tdata = data;
       console.log(data)
       this.Tdata.data.forEach(element => {
-        console.log(element.customer);
-        this.Tarray.push(element.customer)
+        // console.log(element.customer);
+        // this.Tarray.push(element.customer)
       });
       
     })
-    console.log(this.Tarray);
+    // console.log(this.Tarray);
   }
 }
 

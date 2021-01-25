@@ -21,6 +21,6 @@ export class WbmsService {
     console.log('Bearer '+localStorage.getItem("Authorization"))
 
     return this.http.get(url,{headers: httpHeaders});
-
   }
+  
 }

@@ -46,7 +46,7 @@
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    top:70px;
+    top: 70px;
     left: 255px;
     width: 0;
     height: 100%;
@@ -126,7 +126,6 @@
     // background: white;
 }
 
-
 .sub-menu>li:hover {
     border-radius: 5px;
 }
@@ -155,4 +154,8 @@
         position: relative;
         margin-right: 0;
     }
+}
+
+.is-active {
+    background: rgb(143, 186, 235);
 }
