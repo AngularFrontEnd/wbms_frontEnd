@@ -6,64 +6,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-.toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #006D8F;
-    color: black;
-    font-size: 35px;
+.container{
+    box-shadow: 0px 4px 8px 0px #757575;
 }
-
-.toolbar img {
-    margin: 0 16px;
-}
-
-.toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover {
-    opacity: 0.8;
-}
-
-// #### Sidenav ####
-#wrapper {
-    overflow-x: hidden;
-}
-
-#sidebar-wrapper {
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-}
-
-#sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
-}
-
-#sidebar-wrapper .list-group {
-    width: 15rem;
-}
-
-#page-content-wrapper {
-    min-width: 100vw;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
-}
-
 @media (min-width: 768px) {
     #sidebar-wrapper {
         margin-left: 0;
@@ -79,18 +24,10 @@
 
 .topNav {
     background-color: #027EB4;
-    // width:100%;
 }
 
 .badge {
     background-color: #F1DA06;
-}
-
-.dashboard {
-    background-color: aquamarine;
-    border: black 3px solid;
-    width: 350px;
-    height: 90%;
 }
 
 //CSS FOR SIDE BAR
@@ -113,10 +50,8 @@
     left: 255px;
     width: 0;
     height: 100%;
-    margin-left: -235px;
-    margin-bottom: 20%;
+    margin-left: -240px;
     overflow-y: auto;
-    // background: rgb(18, 101, 196);
     background: rgb(18, 101, 196);
     border-radius: 8px;
     margin-top: 10px;
@@ -194,6 +129,9 @@
 
 .sub-menu>li:hover {
     border-radius: 5px;
+}
+.breadcrumb-item{
+    font-size: 13px;
 }
 
 @media(min-width:768px) {

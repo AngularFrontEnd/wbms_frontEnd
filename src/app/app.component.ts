@@ -17,7 +17,8 @@ export class AppComponent {
     private router: Router) { }
 
   logOut() {
-
+    console.log("Test");
+    
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
             
@@ -30,7 +31,7 @@ export class AppComponent {
         headers: httpHeaders
       })
       .subscribe(result => {
-        console.log(result);
+        console.log("--->>",result);
         localStorage.removeItem("Authorization");
         localStorage.clear();
         this.router.navigate(['/'])
