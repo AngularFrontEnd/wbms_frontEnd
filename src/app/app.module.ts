@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+// import {NgxPrintModule} from 'ngx-print';
 // import { CookieService } from 'angular2-cookie/services/cookies.service';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
@@ -40,9 +41,10 @@ import { CustomerViewComponent } from './customer-view/customer-view.component';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

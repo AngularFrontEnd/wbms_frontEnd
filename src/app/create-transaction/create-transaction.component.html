@@ -30,7 +30,8 @@
                     <td>{{customer.email}}</td>
                     <td class="text-center">{{customer.contactNumber}}</td>
                     <td>{{customer.address}}</td>
-                    <button class="btn btn-primary my-2 ml-2">view</button>
+                    <td class="text-center">Status</td>
+                    <button class="btn btn-primary my-2 ml-2" [routerLink]="['customer-view']">view</button>
                 </tbody>
             </table>
         </div>
