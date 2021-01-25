@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { createTransactions } from '../app-models';
+import { Customer } from '../app-models';
+import { Router } from '@angular/router';
+import { WbmsService } from '../wbms.service';
+
 
 @Component({
   selector: 'app-create-transaction',
@@ -8,25 +11,38 @@ import { createTransactions } from '../app-models';
 })
 export class CreateTransactionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private wbmsService: WbmsService
+  ) { }
+
+  private url = 'https://wbm-system.herokuapp.com/api/transaction'; //change later to api/transaction/pending-transaction
+  // balhin sa create-transaction
+
+  Tdata;
+  customers: Customer[];
+  Tarray = [];
+  data;
+  dataArray = [];
 
   ngOnInit(): void {
+    // this.wbmsService.getData(this.url).subscribe(data => {
+    //   this.Tdata = data;
+    //   // console.log(data)
+    //   this.Tdata.data.forEach(element => {
+    //     // console.log(element.customer);
+    //     this.Tarray.push(element.customer)
+    //   });
+
+    // })
+    // console.log(this.Tarray);
+
+    this.wbmsService.getData(this.url).subscribe(data => {
+      this.data = data
+      this.data.data.array.forEach(element => {
+        console.log(element.data);
+        // this.dataArray.push(element.)
+      });
+    })
   }
-
-  createTransactions: createTransactions[]= [
-    {houseNo: 1, customerName: "Juan Tamad", waterConsumption: 300, amount: 2300},
-    {houseNo: 2, customerName: "Pedro Penduko", waterConsumption: 420, amount: 3200},
-    {houseNo: 3, customerName: "Jin Mori", waterConsumption: 280, amount: 2000 }
-  ]
-
-  houseNo = 0;
-  customerName = '';
-  waterConsumption = 0;
-  amount = 0;
-
-
- 
 }
-
-
-

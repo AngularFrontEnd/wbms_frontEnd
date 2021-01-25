@@ -2,7 +2,6 @@
     overflow-x: hidden;
     background-color: #E1DBDB;
     width: 100%;
-    // margin: 5%;
 }
 
 .card-counter {
@@ -77,10 +76,6 @@
     }
 }
 
-.mt-2 rounded-circle {
-    width: 95%;
-    height: 100%;
-}
 
 
 .card-body {
@@ -89,11 +84,6 @@
 }
 
 
-.table {
-    background-color: #EFF3F3;
-    box-shadow: 0px 4px 8px 0px #757575;
-    width: 100%;
-}
 
 @media screen and (max-width: 991px) {
     .row.container {

@@ -29,7 +29,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                         <li><a class="dropdown-item" href="#">My Account</a></li>
-                        <li> <a href="/"><button class="dropdown-item" (click)="logOut()">Logout</button></a></li>
+                        <li><button class="dropdown-item" (click)="logOut()">Logout</button></li>
                     </div>
                 </div>
             </li>
@@ -40,8 +40,9 @@
     <!-- FINAL NAV BAR -->
     <div id="sidebar-wrapper" class="shadow">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand shadow mb-2">
-                <a href="dashboard">Dashboards</a>
+            <li class="sidebar-brand shadow ">
+                <!-- <a href="dashboard">Dashboards</a> -->
+                <p class=" text-uppercase font-weight-bold text-light">Dashboard</p>
             </li>
             <li>
                 <a [routerLink]="['/dashboard']" [routerLinkActive]="['is-active']"><i class="fas fa-tachometer-alt mr-3 "></i>Dashboard</a>
