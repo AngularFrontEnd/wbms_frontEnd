@@ -23,6 +23,7 @@ export class RegisterEmployeeComponent implements OnInit {
 
   getEmployeeData(data: any){
     console.log(data);
-    
   }
+
+  
 }

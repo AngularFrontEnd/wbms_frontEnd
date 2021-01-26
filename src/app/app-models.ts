@@ -20,5 +20,13 @@ export interface Customer {
     email: string;
     contactNumber: string;
     address: string;
-  
-  }
+}
+
+export interface CreateEmployee {
+    firstName: string;
+    lastName: string;
+    middleInitial: string;
+    email: string;
+    contactNumber: string;
+    address: string;
+}
