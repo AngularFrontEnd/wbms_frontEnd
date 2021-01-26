@@ -1,5 +1,5 @@
 {
-    "name": "wmbs-project",
+    "name": "wbms-project",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
@@ -59,7 +59,7 @@
         "typescript": "~4.0.2"
     },
     "engines": {
-        "node": "~10.15.3",
-        "npm": "~6.4.1"
+        "node": "10.15.3",
+        "npm": "6.4.1"
     }
 }

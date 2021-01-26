@@ -4,11 +4,11 @@ const path = require('path')
 
 const app = express()
 
-app.use(express.static('./dist/wbms_frontEnd/'))
+app.use(express.static('./dist/wbms-project/'))
 
 app.get('/*', req, res =>{
         res.sendFile('index.html', 
-        {root: 'dist/wbms_frontEnd/'}
+        {root: 'dist/wbms-project/'}
         )
 })
 
