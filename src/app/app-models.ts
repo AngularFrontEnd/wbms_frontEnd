@@ -20,20 +20,20 @@ export interface Customer {
     email: string;
     contactNumber: string;
     address: string;
-  
-  }
 
-  export interface Staff{
+}
+
+export interface Staff {
     username: string;
     password: string;
     firstName: string;
     lastName: string;
     gender: string;
-    userType: string;
+    usertype: string;
     email: string;
     address: string;
     contactNumber: string;
-  }
+}
 
 
 export interface CreateEmployee {
@@ -45,7 +45,7 @@ export interface CreateEmployee {
     address: string;
 }
 
-export interface createHousehold {
+export interface CreateHousehold {
     firstName: string;
     lastName: string;
     middleInitial: string;
@@ -53,4 +53,9 @@ export interface createHousehold {
     contactNumber: string;
     address: string;
     city: string;
+}
+
+export interface Setting {
+    settingName: string;
+    value: string;
 }

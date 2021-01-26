@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Router} from '@angular/router';
-
-
+import { AuthServiceService } from '../auth-service.service'
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,11 @@ import { Router} from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private http:HttpClient, private router:Router) { }
+  constructor(
+    private http:HttpClient, 
+    private router:Router,
+    private authService: AuthServiceService,
+    ) { }
 
   username;
   password;
@@ -29,7 +32,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem( "Authorization" , result['token']);
 
       if (localStorage.getItem("Authorization") != null) {
-        this.router.navigate(['/dashboard']);
+        this.authService.authenticate('dashboard')
       }
     })
 

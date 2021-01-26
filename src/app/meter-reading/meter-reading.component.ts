@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
+import { AuthServiceService } from '../auth-service.service'
 
 
 @Component({
@@ -12,11 +13,14 @@ export class MeterReadingComponent implements OnInit {
 
   
   constructor(
-    private router: Router,)  { 
+    private router: Router,
+    public authServiceService: AuthServiceService ,
+    )  { 
     
   }
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('meter-reading')
   }
 
   houseId;

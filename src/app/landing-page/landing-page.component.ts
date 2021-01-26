@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
-import { HttpClient, HttpHeaders}  from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthServiceService } from '../auth-service.service';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -9,9 +11,15 @@ import { HttpClient, HttpHeaders}  from '@angular/common/http'
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor(private http:HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    public authServiceService: AuthServiceService
+  ) { }
+
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('dashboard')
+
     this.onload();
     var ctx = document.getElementById('myChart')
     var myChart = new Chart(ctx, {
@@ -20,7 +28,7 @@ export class LandingPageComponent implements OnInit {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septermber', 'October', 'November', 'December'],
         datasets: [{
           label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3,20,10,15,8,11,6],
+          data: [12, 19, 3, 5, 2, 3, 20, 10, 15, 8, 11, 6],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -68,39 +76,46 @@ export class LandingPageComponent implements OnInit {
   numberCustomer;
   transactionRecordsNumber;
   employeeNumber;
-  onload(){
+
+  onload() {
 
     const httpHeaders = new HttpHeaders({
-      Authorization: 'Bearer '+localStorage.getItem("Authorization")
+      Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
 
     // console.log('Bearer '+localStorage.getItem("Authorization"))
-    
+    let numCus;
     this.http
       .get('https://wbm-system.herokuapp.com/api/customer', {
         headers: httpHeaders
       })
       .subscribe(result => {
-        // console.log(result['data'].length);
-        this.numberCustomer =  result['data'].length;
+        console.log(result);
+        numCus = result;
+        this.numberCustomer = numCus.length
+        console.log(this.numberCustomer)
       });
-
+    let numTrans;
     this.http
       .get('https://wbm-system.herokuapp.com/api/transaction', {
         headers: httpHeaders
       })
       .subscribe(result => {
-        // console.log(result['data']);
-        this.transactionRecordsNumber =  result['data'].length;
+        console.log(result);
+        numTrans = result;
+        this.transactionRecordsNumber = numTrans.length
+        console.log(this.numberCustomer)
       });
-      
+    let numUser;
     this.http
       .get('https://wbm-system.herokuapp.com/api/staff', {
         headers: httpHeaders
       })
       .subscribe(result => {
-        // console.log(result['data']);
-        this.employeeNumber =  result['data'].length;
+        console.log(result);
+        numUser = result;
+        this.employeeNumber = numUser.length
+        console.log(this.employeeNumber);
       });
   }
 

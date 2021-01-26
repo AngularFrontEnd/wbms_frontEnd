@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-update-customer',
@@ -18,9 +19,12 @@ export class UpdateCustomerComponent implements OnInit {
   city;
 
 
-  constructor() { }
+  constructor(
+    public authServiceService: AuthServiceService
+  ) { }
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('update-customer')
   }
 
 }

@@ -1,9 +1,9 @@
 <!-- Top Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-fixed topNav fixed-top">
-    <a class="navbar-brand" href="#">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-fixed topNav fixed-top" *ngIf= "authServiceService.isAuthenticated">
+    <div class="navbar-brand" >
         <img width="30" class="bg-white rounded-circle" alt="Angular Logo" src="../assets//img//wbms-logo.png" />
         <span class="font-weight-bold">&nbsp;WMBS</span>
-    </a>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fas fa-bars"></span>
     </button>
@@ -38,7 +38,7 @@
 </nav>
 <div id="wrapper">
     <!-- FINAL NAV BAR -->
-    <div id="sidebar-wrapper" class="shadow">
+    <div id="sidebar-wrapper" class="shadow" *ngIf= "authServiceService.isAuthenticated">
         <ul class="sidebar-nav">
             <li class="sidebar-brand shadow ">
                 <p class=" text-uppercase font-weight-bold text-light">Dashboard</p>
@@ -58,7 +58,7 @@
                             <li><i class="fas fa-hand-holding-usd mr-3"></i>Create Transaction</li>
                         </a>
                         <a [routerLink]="['/transaction']" [routerLinkActive]="['is-active']">
-                            <li><i class="fa fa-clipboard mr-1"></i> Transaction Records</li>
+                            <li><i class="fa fa-clipboard mr-3"></i> Transaction Records</li>
                         </a>
                     </div>
                 </div>
@@ -78,8 +78,8 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="container d-inline-flex flex-row bg-white rounded py-1">
-                <a href="#menu-toggle" class="btn btn-primary my-1" id="menu-toggle"><i class="fa fa-bars"></i> </a>
+            <div class="container d-inline-flex flex-row bg-white rounded py-1" *ngIf= "authServiceService.isAuthenticated">
+                <a  class="btn btn-primary my-1" id="menu-toggle"><i class="fa fa-bars"></i> </a>
                 <ol class="breadcrumb bg-transparent mt-2 ml-2">
                     <li class="breadcrumb-item active"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Library</a></li>

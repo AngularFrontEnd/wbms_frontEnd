@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { createHousehold } from '../app-models';
+import { CreateHousehold } from '../app-models';
 import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
+import { AuthServiceService } from '../auth-service.service'
 
 @Component({
   selector: 'app-register-household',
@@ -24,22 +25,27 @@ export class RegisterHouseholdComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private wbmsService: WbmsService
+    private wbmsService: WbmsService,
+    public authServiceService: AuthServiceService
   ) { }
+
+  createHousehold: CreateHousehold[];
+
 
   private urlAddHousehold = 'https://wbm-system.herokuapp.com/api/customer/create';
 
 
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('register-new-household')
   }
-  getHouseholdData(data: any){
+  getHouseholdData(data: any) {
     this.wbmsService.addHousehold(this.urlAddHousehold, data).subscribe(data => {
       this.router.navigate(['/customer']);
       console.log(data);
 
     })
-    
+
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreateTransaction } from '../app-models';
 import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
+import { AuthServiceService } from '../auth-service.service'
 
 
 @Component({
@@ -13,7 +14,8 @@ export class CreateTransactionComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private wbmsService: WbmsService
+    private wbmsService: WbmsService,
+    public authServiceService: AuthServiceService 
   ) { }
 
   private url = 'https://wbm-system.herokuapp.com/api/transaction/pending-transaction';
@@ -25,6 +27,8 @@ export class CreateTransactionComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('create-transaction')
+    
     this.wbmsService.getData(this.url).subscribe(data => {
       this.pendingData = data;
       this.pendingData.forEach(element => {
