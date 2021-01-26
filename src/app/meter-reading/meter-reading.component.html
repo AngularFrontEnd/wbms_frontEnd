@@ -5,18 +5,23 @@
         </div>
         <hr>
         <div class="form-row">
+            <input [ngModel]="recordedBy" type="hidden" name="recordedBy">
             <div class="form-group col-md-12 inputLabel">
                 <label for="houseId">House Id</label>
-                <input [ngModel]="houseId" name="houseId" type="text" class="form-control " id="houseId">
+                <input [ngModel]="customer_id" name="customer_id" type="text" class="form-control " id="customer_id">
             </div>
             <div class="form-group col-md-12 inputLabel">
                 <label for="meterReading">Meter Reading</label>
                 <input [ngModel]="meterReading" name="meterReading" type="text" class="form-control " id="meterReading">
             </div>
+            <div class="form-group col-md-12 inputLabel">
+                <label for="meterReading">Reading Date</label>
+                <input [ngModel]="reading_date" name="reading_date" type="date" class="form-control " id="readingDate">
+            </div>
         </div>
         <!-- Button -->
         <div class="form-row d-flex flex-row-reverse">
-            <div class="p-2"><button type="submit" class="btn btn-primary  mt-3 mb-5">Save</button></div>
+            <div class="p-2"><button type="submit" class="btn btn-primary  mt-3 mb-5" >Save</button></div>
             <div class="p-2"><button class="btn btn-danger  mx-2 mt-3 mb-5" [routerLink]="['/create-transaction']">Cancel</button></div>
         </div>
     </form>

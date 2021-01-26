@@ -51,4 +51,10 @@ export interface Staff{
     email: string;
     address: string;
     contactNumber: string;
-  }
+}
+
+export interface meterReading {
+    customer_id: number;
+    meter_reading: number;
+    reading_date: number;
+}

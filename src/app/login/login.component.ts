@@ -22,11 +22,13 @@ export class LoginComponent implements OnInit {
 
   
   onSubmit(data : any){
-    console.log(data);
     this.http.post('https://wbm-system.herokuapp.com/api/login',data)
     .subscribe((result)=>{
-      console.log(result['token']);
+      console.log(result['user']['id']);
+
       localStorage.setItem( "Authorization" , result['token']);
+      localStorage.setItem( "UserId", result['user']['id']);
+      localStorage.setItem( "UserFullName" , result['user']['firstName']+" "+result['user']['firstName']);
 
       if (localStorage.getItem("Authorization") != null) {
         this.router.navigate(['/dashboard']);
