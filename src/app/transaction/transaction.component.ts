@@ -24,18 +24,18 @@ export class TransactionComponent implements OnInit {
     this.wbmsService.getData(this.url).subscribe(data => {
       this.paidTransactionData = data;
       this.paidTransactionData.forEach(element => {
-        let sample = { houseNumber: '', customerName: '', address: '', meterReading: '', rendered_amount: '', total_amount: '', change: '', transacted_by: '' }
-        sample.houseNumber = element.customer_id;
-        sample.customerName = element.customer.firstName + ' ' + element.customer.lastName;
-        sample.address = element.customer.address;
-        sample.rendered_amount = element.customer.address;
-        sample.meterReading = element.meterReading;
-        sample.rendered_amount = element.rendered_amount;
-        sample.total_amount = element.total_amount;
-        sample.change = element.change;
-        sample.transacted_by = element.transacted_by.firstName;
+        let transaction = { houseNumber: '', customerName: '', address: '', meterReading: '', rendered_amount: '', total_amount: '', change: '', transacted_by: '' }
+        transaction.houseNumber = element.customer_id;
+        transaction.customerName = element.customer.firstName + ' ' + element.customer.lastName;
+        transaction.address = element.customer.address;
+        transaction.rendered_amount = element.customer.address;
+        transaction.meterReading = element.meterReading;
+        transaction.rendered_amount = element.rendered_amount;
+        transaction.total_amount = element.total_amount;
+        transaction.change = element.change;
+        transaction.transacted_by = element.transacted_by.firstName;
         //push to array
-        this.paidTransactionArray.push(sample)
+        this.paidTransactionArray.push(transaction)
       });
     })
     console.log(this.paidTransactionArray);

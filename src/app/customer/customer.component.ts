@@ -16,9 +16,7 @@ export class CustomerComponent implements OnInit {
     ) { }
 
   private urlGet = 'https://wbm-system.herokuapp.com/api/customer'; 
-  private urlAdd ='https://wbm-system.herokuapp.com/api/customer/create' 
 
-  addedCustomer;
   customerData;
   customers: Customer[];
 
@@ -28,12 +26,9 @@ export class CustomerComponent implements OnInit {
       this.customerData = data;
       console.log(this.customerData)
     })
-
-    // this.wbmsService.addData(this.urlAdd).(data=> {
-    //   this.addedCustomer =data;
-        
-    // })
+    
   }
+
 }
 
 

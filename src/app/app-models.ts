@@ -22,3 +22,15 @@ export interface Customer {
     address: string;
   
   }
+
+  export interface Staff{
+    username: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    gender: string;
+    userType: string;
+    email: string;
+    address: string;
+    contactNumber: string;
+  }
