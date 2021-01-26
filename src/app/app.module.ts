@@ -20,6 +20,7 @@ import { EmployeeRecordsComponent } from './employee-records/employee-records.co
 import { MeterReadingComponent } from './meter-reading/meter-reading.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CustomerViewComponent } from './customer-view/customer-view.component';
     EmployeeRecordsComponent,
     MeterReadingComponent,
     RegisterEmployeeComponent,
-    CustomerViewComponent
+    CustomerViewComponent,
+    UpdateCustomerComponent
     
   ],
   imports: [

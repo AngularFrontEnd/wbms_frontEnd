@@ -36,4 +36,15 @@ export class WbmsService {
     return this.http.post(url, body,{ headers: httpHeaders , responseType: "text" });
   }
 
+  addHousehold(url: string, body){
+    console.log(body)
+    const httpHeaders = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem("Authorization")
+    });
+    console.log(httpHeaders)
+    console.log(url)
+    console.log('Bearer ' + localStorage.getItem("Authorization"))
+
+    return this.http.post(url, body,{ headers: httpHeaders , responseType: "text" });
+  }
 }

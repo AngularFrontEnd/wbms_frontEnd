@@ -34,3 +34,23 @@ export interface Customer {
     address: string;
     contactNumber: string;
   }
+
+
+export interface CreateEmployee {
+    firstName: string;
+    lastName: string;
+    middleInitial: string;
+    email: string;
+    contactNumber: string;
+    address: string;
+}
+
+export interface createHousehold {
+    firstName: string;
+    lastName: string;
+    middleInitial: string;
+    email: string;
+    contactNumber: string;
+    address: string;
+    city: string;
+}

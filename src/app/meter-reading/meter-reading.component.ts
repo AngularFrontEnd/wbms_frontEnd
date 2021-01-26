@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class MeterReadingComponent implements OnInit {
 
+
+  
   constructor(
     private router: Router,)  { 
     
