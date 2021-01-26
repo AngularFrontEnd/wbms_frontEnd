@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders}  from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 
 
@@ -9,18 +9,31 @@ import { HttpClient, HttpHeaders}  from '@angular/common/http'
 export class WbmsService {
   constructor(
     private http: HttpClient
-    ) { }
+  ) { }
 
 
-  getData(url: string){
+  getData(url: string) {
     const httpHeaders = new HttpHeaders({
-      Authorization: 'Bearer '+localStorage.getItem("Authorization")
+      Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
     console.log(httpHeaders)
     console.log(url)
-    console.log('Bearer '+ localStorage.getItem("Authorization"))
+    console.log('Bearer ' + localStorage.getItem("Authorization"))
 
-    return this.http.get(url,{headers: httpHeaders});
+    return this.http.get(url, { headers: httpHeaders });
   }
-  
+
+
+  addEmployee(url: string , body) {
+    console.log(body)
+    const httpHeaders = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem("Authorization")
+    });
+    console.log(httpHeaders)
+    console.log(url)
+    console.log('Bearer ' + localStorage.getItem("Authorization"))
+
+    return this.http.post(url, body,{ headers: httpHeaders , responseType: "text" });
+  }
+
 }
