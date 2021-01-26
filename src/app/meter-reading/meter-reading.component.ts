@@ -24,9 +24,8 @@ export class MeterReadingComponent implements OnInit {
   ngOnInit(): void {
     this.authServiceService.authenticate('meter-reading')
     this.recordedBy = localStorage.getItem("UserId");
-   
-  }
-
+   }
+    
   customer_id;
   meterReading;
   reading_date;
