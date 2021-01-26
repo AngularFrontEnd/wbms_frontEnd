@@ -1,12 +1,10 @@
 const express = require('express')
 const app = express()
 
-app.use(express.static('./dist/wbms-project'))
+app.use(express.static('./dist/wmbs-project'))
 
 app.get('/*', req, res =>{
-        res.sendFile('index.html', 
-        {root: 'dist/wbms-project/'}
-        )
+        res.sendFile('index.html',  { root: 'dist/wmbs-project/'})
 })
 
 app.listen(process.env.port || 8080)
