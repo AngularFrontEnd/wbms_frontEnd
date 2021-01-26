@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TransactionRecords } from '../app-models';
 import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-transaction',
@@ -12,7 +13,8 @@ export class TransactionComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private wbmsService: WbmsService
+    private wbmsService: WbmsService,
+    public authServiceService: AuthServiceService 
   ) { }
   private url = 'https://wbm-system.herokuapp.com/api/transaction/paid-transaction';
 
@@ -21,6 +23,8 @@ export class TransactionComponent implements OnInit {
   paidTransactionArray = [];
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('transaction')
+
     this.wbmsService.getData(this.url).subscribe(data => {
       this.paidTransactionData = data;
       this.paidTransactionData.forEach(element => {

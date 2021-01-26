@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreateTransaction } from '../app-models';
 import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-register-employee',
@@ -12,7 +13,8 @@ export class RegisterEmployeeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private wbmsService: WbmsService
+    private wbmsService: WbmsService,
+    public authServiceService: AuthServiceService
   ) { }
 
   private urlAddEmployee = 'https://wbm-system.herokuapp.com/api/staff/create';
@@ -29,6 +31,7 @@ export class RegisterEmployeeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('register-employee')
   }
 
   getEmployeeData(data: any) {
@@ -37,6 +40,6 @@ export class RegisterEmployeeComponent implements OnInit {
 
     })
   }
-  
-  
+
+
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateTransaction } from '../app-models';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
+import { Router } from '@angular/router'; 
+import { AuthServiceService } from '../auth-service.service'
 
 
 @Component({
@@ -15,7 +17,9 @@ export class MeterReadingComponent implements OnInit {
   
   constructor(
     private router: Router,
-    private wbmsService: WbmsService)  { 
+    private wbmsService: WbmsService,
+    public authServiceService: AuthServiceService ,
+    )  { 
     
   }
 
@@ -23,6 +27,7 @@ export class MeterReadingComponent implements OnInit {
   ngOnInit(): void {
     this.recordedBy = localStorage.getItem("UserId");
    
+    this.authServiceService.authenticate('meter-reading')
   }
 
   customer_id;

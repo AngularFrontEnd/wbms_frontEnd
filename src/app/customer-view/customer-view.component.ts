@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-customer-view',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authServiceService: AuthServiceService, 
+  ) { }
 
   ngOnInit(): void {
+    this.authServiceService.authenticate('customer-view')
   }
 
 }

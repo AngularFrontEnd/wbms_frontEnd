@@ -20,7 +20,21 @@ export interface Customer {
     email: string;
     contactNumber: string;
     address: string;
+
 }
+
+export interface Staff {
+    username: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    gender: string;
+    usertype: string;
+    email: string;
+    address: string;
+    contactNumber: string;
+}
+
 
 export interface CreateEmployee {
     firstName: string;
@@ -31,7 +45,7 @@ export interface CreateEmployee {
     address: string;
 }
 
-export interface createHousehold {
+export interface CreateHousehold {
     firstName: string;
     lastName: string;
     middleInitial: string;
@@ -57,4 +71,8 @@ export interface meterReading {
     customer_id: number;
     meter_reading: number;
     reading_date: number;
+}
+export interface Setting {
+    settingName: string;
+    value: string;
 }

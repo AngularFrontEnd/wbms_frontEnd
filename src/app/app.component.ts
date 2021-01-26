@@ -1,7 +1,7 @@
-
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from '@angular/router';
+import { AuthServiceService } from '../app/auth-service.service'
 
 @Component({
   selector: 'app-root',
@@ -13,30 +13,29 @@ export class AppComponent {
   title = 'wmbs-project';
 
   constructor(
-    private http: HttpClient, 
-    private router: Router) { }
+    private http: HttpClient,
+    private router: Router,
+    public authServiceService: AuthServiceService
+  ) { }
+
 
   logOut() {
-    console.log("Test");
+    localStorage.removeItem("Authorization");
+    this.authServiceService.logOut()
     
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
-            
+
     });
-
     console.log('Bearer ' + localStorage.getItem("Authorization"))
-
     this.http
       .post('https://wbm-system.herokuapp.com/api/logout', "", {
         headers: httpHeaders
       })
       .subscribe(result => {
-        console.log("--->>",result);
         localStorage.removeItem("Authorization");
-        localStorage.clear();
-        
       });
-      this.router.navigate(['/'])
+    this.router.navigate(['/'])
   }
 
 }
