@@ -12,6 +12,7 @@ import { RegisterHouseholdComponent } from './register-household/register-househ
 import { MeterReadingComponent } from './meter-reading/meter-reading.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'register-new-household', component: RegisterHouseholdComponent },
   { path: 'meter-reading', component: MeterReadingComponent },
   { path: 'register-employee', component: RegisterEmployeeComponent },
-  { path: 'customer-view', component: CustomerViewComponent }
+  { path: 'customer-view', component: CustomerViewComponent },
+  { path: 'update-customer', component: UpdateCustomerComponent }
 
 ];
 

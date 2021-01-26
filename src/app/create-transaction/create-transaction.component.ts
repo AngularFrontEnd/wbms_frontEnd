@@ -32,5 +32,7 @@ export class CreateTransactionComponent implements OnInit {
       });
     })
     console.log(this.customerArray);
+
   }
+
 }

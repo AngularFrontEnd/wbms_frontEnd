@@ -1,7 +1,7 @@
 <div class="container registerHouseholdContainer">
-    <form #registerHouseHoldForm="ngForm" (ngSubmit)="getHouseholdData(registerHouseHoldForm.value)" class="registerHouseHoldForm">
+    <form #registerHouseHoldForm="ngForm" class="registerHouseHoldForm">
         <div class="form-row">
-            <h2 class="formHeader text-center">Register New Household</h2>
+            <h2 class="formHeader text-center">Update Customer</h2>
         </div>
         <hr>
         <!-- Name -->
@@ -49,8 +49,8 @@
         </div>
         <!-- Button -->
         <div class="form-row d-flex flex-row-reverse">
-            <div class="p-2"><button type="submit" class="btn btn-primary my-3" [disabled]="clicked">Save</button></div>
-            <div class="p-2"><button class="btn btn-danger  mx-2 my-3 " [routerLink]="['/customer']">Cancel</button></div>
+            <div class="p-2"><button type="submit" class="btn btn-primary my-3">Save</button></div>
+            <div class="p-2"><button class="btn btn-danger  mx-2 my-3 " [routerLink]="['/customer-view']">Cancel</button></div>
         </div>
     </form>
 </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateTransaction } from '../app-models';
+import { Router } from '@angular/router';
+import { WbmsService } from '../wbms.service';
 
 @Component({
   selector: 'app-register-employee',
@@ -7,11 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterEmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private wbmsService: WbmsService
+  ) { }
 
-  ngOnInit(): void {
-  }
-  
+  private urlAddEmployee = 'https://wbm-system.herokuapp.com/api/staff/create';
+
   firstName;
   lastName;
   middleinitial;
@@ -19,11 +24,19 @@ export class RegisterEmployeeComponent implements OnInit {
   contactNumber;
   email;
   address;
-  userType;
+  usertype;
 
-  getEmployeeData(data: any){
-    console.log(data);
+
+
+  ngOnInit(): void {
   }
 
+  getEmployeeData(data: any) {
+    this.wbmsService.addEmployee(this.urlAddEmployee, data).subscribe(data => {
+      console.log(data);
+
+    })
+  }
+  
   
 }
