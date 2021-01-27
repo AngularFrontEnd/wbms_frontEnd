@@ -79,8 +79,16 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="container d-inline-flex flex-row bg-white rounded py-1" *ngIf="authServiceService.isAuthenticated">
-                <a class="btn btn-primary my-1" id="menu-toggle"><i class="fa fa-bars"></i> </a>
+            <div class="container d-inline-flex flex-row bg-white rounded py-1" style="z-index:200" *ngIf="authServiceService.isAuthenticated">
+                <!-- <a class="btn btn-primary my-1" id="menu-toggle"><i class="fa fa-bars"></i> </a> -->
+                <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              ><i class="fa fa-bars"></i></a>
                 <ol class="breadcrumb bg-transparent mt-2 ml-2">
                     <li class="breadcrumb-item active"><a [routerLink]="['/dashboard']">Home</a></li>
                     <li class="breadcrumb-item">Library</li>
