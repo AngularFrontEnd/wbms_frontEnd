@@ -52,7 +52,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     HttpClientModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    NgMultiSelectDropDownModule
     
     
   ],

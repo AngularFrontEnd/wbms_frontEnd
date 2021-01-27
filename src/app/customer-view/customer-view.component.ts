@@ -25,7 +25,8 @@ export class CustomerViewComponent implements OnInit {
   contactNum;
   email;
   address;
-  transactionInfo;
+  pendingtransactionInfo;
+  paidtransactionInfo;
 
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class CustomerViewComponent implements OnInit {
     this.authServiceService.authenticate("customer-view?householdID=" + householdID)
     this.loadCustomerInfo(householdID);
     this.loadPendingTransaction(householdID);
+    this. loadTransactionHistory(householdID);
     
   }
 
@@ -66,9 +68,19 @@ export class CustomerViewComponent implements OnInit {
   loadPendingTransaction(householdID){
     let urlGet = 'https://wbm-system.herokuapp.com/api/transaction/show-pending-transaction'
     this.wbmsService.getDatatoView(urlGet, householdID).subscribe(result => {
-      this.transactionInfo = result;
-      console.log(this.transactionInfo)
+      this.pendingtransactionInfo = result;
     })
   }
 
+  loadTransactionHistory(householdID){
+    let urlGet = 'https://wbm-system.herokuapp.com/api/transaction/show-paid-transaction'
+    this.wbmsService.getDatatoView(urlGet, householdID).subscribe(result =>{
+      this.paidtransactionInfo= result;
+      console.log(this.paidtransactionInfo)
+     })
+  }
+    
+
 }
+
+

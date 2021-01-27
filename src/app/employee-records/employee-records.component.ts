@@ -50,10 +50,7 @@ export class EmployeeRecordsComponent implements OnInit {
         this.staffDataArray.push(staff)
 
       });
-      console.log(this.staffDataArray);
       
     })
-
   }
-
 }

@@ -32,7 +32,6 @@ export class CustomerComponent implements OnInit {
     this.authServiceService.authenticate('customer')
     this.wbmsService.getData(this.urlGet).subscribe(data => {
       this.customerData = data;
-      console.log(this.customerData)
     })
 
   }

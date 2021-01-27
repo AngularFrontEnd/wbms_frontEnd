@@ -5,9 +5,10 @@
                 <img class="card-img-top m-4" src="../../assets/img/img2.jpg" alt="Card image cap">
             </div>
             <div class="col-sm-6 mt-4 customerDetails">
-                <h5 class="customerID">{{ customerId }}</h5>
+                <h5 class="customerID">Household Id#: {{ customerId }}</h5>
                 <h3>{{ firstName }} {{ lastName }}</h3>
-                <h6 class="fa fa-stop mr-1"></h6> <span class="contactNumber"> {{ contactNum }}| <h6 class="fa fa-stop"></h6>
+                <h6 class="fa fa-stop mr-1"></h6> <span class="contactNumber"> {{ contactNum }}| <h6 class="fa fa-stop">
+                    </h6>
                     {{ email }}</span><br>
                 <p class="address">{{ address }}</p>
             </div>
@@ -22,22 +23,25 @@
             </div>
         </div>
         <div class="row">
-            <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#pendingTransaction" role="tab" aria-controls="home"
-                        aria-selected="true">Pending Transaction</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#transactionHistory" role="tab" aria-controls="profile"
-                        aria-selected="false">Transaction History</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                        aria-selected="false">Statistic</a>
-                </li>
-            </ul>
+            <div>
+                <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#pendingTransaction" role="tab"
+                            aria-controls="home" aria-selected="true">Pending Transaction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#transactionHistory" role="tab"
+                            aria-controls="profile" aria-selected="false">Transaction History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#statistics" role="tab"
+                            aria-controls="contact" aria-selected="false">Statistic</a>
+                    </li>
+                </ul>
+            </div>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="pendingTransaction" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane fade show active" id="pendingTransaction" role="tabpanel"
+                    aria-labelledby="home-tab">
                     <table class="table">
                         <thead>
                             <tr>
@@ -50,82 +54,77 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody *ngFor="let transaction of transactionInfo">
+                        <tbody *ngFor="let pendingTransaction of pendingtransactionInfo">
                             <tr>
-                                <th scope="row">{{transaction.id}}</th>
-                                <td>{{ transaction.meterReading }}</td>
-                                <td>{{ transaction.total_amount }}</td>
-                                <td>{{ transaction.reading_date}}</td>
-                                <td>{{ transaction.due_date }}</td>
-                                <td>{{ transaction.recorded_by.firstName}} {{ transaction.recorded_by.lastName}}</td>
-                                <a class="btn bg-info my-2 ml-2" href ="" >view</a>
+                                <th scope="row">{{pendingTransaction.id}}</th>
+                                <td>{{ pendingTransaction.meterReading }}</td>
+                                <td>{{ pendingTransaction.total_amount }}</td>
+                                <td>{{ pendingTransaction.reading_date}}</td>
+                                <td>{{ pendingTransaction.due_date }}</td>
+                                <td>{{ pendingTransaction.recorded_by.firstName}} {{ pendingTransaction.recorded_by.lastName}}</td>
+                                <td> <a class="btn bg-info my-2 ml-2" href="">view</a></td>
+                               
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="tab-pane fade" id="transactionHistory" role="tabpanel" aria-labelledby="profile-tab">
-                        <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Transaction #</th>
+                                <th scope="col">Meter Reading(/m3)</th>
+                                <th scope="col">Total Amount</th>
+                                <th scope="col">Reading Date</th>
+                                <th scope="col">Due Date</th>
+                                <th scope="col">Recorded By:</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let paidTransaction of paidtransactionInfo">
+                            <tr>
+                                <th scope="row">{{ paidTransaction.id }}</th>
+                                <td>{{ paidTransaction.meterReading }}</td>
+                                <td>{{ paidTransaction.total_amount }}</td>
+                                <td>{{ paidTransaction.reading_date}}</td>
+                                <td>{{ paidTransaction.due_date }}</td>
+                                <td>{{ paidTransaction.recorded_by.firstName}} {{ paidTransaction.recorded_by.lastName}}</td>
+                                <a class="btn bg-info my-2 ml-2" href="">view</a>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="contact-tab">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

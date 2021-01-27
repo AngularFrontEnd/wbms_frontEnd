@@ -34,7 +34,6 @@ export class CreateTransactionComponent implements OnInit {
     this.authServiceService.authenticate('create-transaction')
     this.wbmsService.getData(this.urlGet).subscribe(data => {
       this.pendingData = data;
-      console.log(data);
       this.pendingData.forEach(element => {
         this.customerArray.push(element.customer)
       });
