@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../app-models';
 import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
-import { AuthServiceService } from  '../auth-service.service'
+import { AuthServiceService } from '../auth-service.service'
 
 @Component({
   selector: 'app-customer',
@@ -12,12 +12,12 @@ import { AuthServiceService } from  '../auth-service.service'
 
 export class CustomerComponent implements OnInit {
   constructor(
-    private router: Router, 
+    private router: Router,
     private wbmsService: WbmsService,
-    public authServiceService: AuthServiceService 
-    ) { }
+    public authServiceService: AuthServiceService
+  ) { }
 
-  private urlGet = 'https://wbm-system.herokuapp.com/api/customer'; 
+  private urlGet = 'https://wbm-system.herokuapp.com/api/customer';
 
   customerData;
   customers: Customer[];
@@ -29,7 +29,7 @@ export class CustomerComponent implements OnInit {
       this.customerData = data;
       console.log(this.customerData)
     })
-    
+
   }
 
 }

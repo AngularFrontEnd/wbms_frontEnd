@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceService } from '../auth-service.service';
-
+import { Router } from '@angular/router';
+import { WbmsService } from '../wbms.service';
+import { AuthServiceService } from  '../auth-service.service'
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
@@ -9,11 +10,15 @@ import { AuthServiceService } from '../auth-service.service';
 export class CustomerViewComponent implements OnInit {
 
   constructor(
-    public authServiceService: AuthServiceService, 
+    public authServiceService: AuthServiceService
   ) { }
+
+  private urlGet = 'https://wbm-system.herokuapp.com/api/customer'
+  
 
   ngOnInit(): void {
     this.authServiceService.authenticate('customer-view')
+
   }
 
 }
