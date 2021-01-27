@@ -16,7 +16,15 @@
             </div>
             <div class="form-group col-md-12 inputLabel">
                 <label for="meterReading">Reading Date</label>
-                <input [ngModel]="reading_date" name="reading_date" type="date" class="form-control " id="readingDate">
+                <!-- <input [ngModel]="reading_date" name="reading_date" type="date" class="form-control " id="readingDate"> -->
+                <input
+                    class="mt-4 form-control reading_date"
+                    type="date"
+                    id="reading_date"
+                    max="{{ today }}"
+                    ngModel
+                    name="reading_date"
+                  />
             </div>
         </div>
         <!-- Button -->

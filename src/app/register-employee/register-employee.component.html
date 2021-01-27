@@ -14,15 +14,15 @@
                 <input [ngModel]="lastName" name="lastName" type="text" class="form-control" id="lastName">
             </div>
             <div class="form-group col-md-2 inputLabel">
-                <label for="middleinitial">Middle Initial</label>
-                <input [ngModel]="middleinitial" name="middleinitial" type="text" class="form-control" id="middleinitial">
+                <label for="middlename">Middle Name</label>
+                <input [ngModel]="middleName" name="middleName" type="text" class="form-control" id="middleName">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3 inputLabel">
                 <label for="gender">Gender</label>
                 <select [ngModel]="gender" name="gender" class="form-control" id="gender">
-                <option selected>Select...</option>
+              
                     <option>Female</option>
                     <option>Male</option>
                 </select>
@@ -44,7 +44,7 @@
             <div class="form-group col-md-3 inputLabel">
                 <label for="userType">User Type</label>
                 <select [ngModel]="usertype" name="usertype" class="form-control" id="userType">
-                <option selected>Select...</option>
+             
                     <option>Admin</option>
                     <option>Clerk</option>
                     <option>Manager</option>
@@ -53,7 +53,7 @@
         </div>
         <!-- Button -->
         <div class="form-row d-flex flex-row-reverse">
-            <div class="p-2"><button type="submit" class="btn btn-primary  my-3" [routerLink]="['/employee-records']">Save</button></div>
+            <div class="p-2"><button type="submit"  class="btn btn-primary my-3">Save</button></div>
             <div class="p-2"><button class="btn btn-danger  mx-2 my-3" [routerLink]="['/employee-records']">Cancel</button></div>
         </div>
     </form>

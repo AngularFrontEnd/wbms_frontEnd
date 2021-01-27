@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { WbmsService } from '../wbms.service';
 import { AuthServiceService } from '../auth-service.service';
 
+
 @Component({
   selector: 'app-register-employee',
   templateUrl: './register-employee.component.html',
@@ -14,19 +15,21 @@ export class RegisterEmployeeComponent implements OnInit {
   constructor(
     private router: Router,
     private wbmsService: WbmsService,
-    public authServiceService: AuthServiceService
+    public authServiceService: AuthServiceService,
   ) { }
 
   private urlAddEmployee = 'https://wbm-system.herokuapp.com/api/staff/create';
 
   firstName;
   lastName;
-  middleinitial;
+  middleName;
   gender;
   contactNumber;
   email;
   address;
   usertype;
+
+  
 
 
 
@@ -35,8 +38,9 @@ export class RegisterEmployeeComponent implements OnInit {
   }
 
   getEmployeeData(data: any) {
+    // console.log(data);
     this.wbmsService.addEmployee(this.urlAddEmployee, data).subscribe(data => {
-      // this.router.navigate(['/employee-records']);
+      this.router.navigate(['/employee-records']);  
       console.log(data);
 
     })
