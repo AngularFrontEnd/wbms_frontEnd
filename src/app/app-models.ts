@@ -54,8 +54,7 @@ export interface CreateHousehold {
     address: string;
     city: string;
 }
-
-export interface Staff{
+export interface Staff {
     username: string;
     password: string;
     firstName: string;
@@ -67,10 +66,6 @@ export interface Staff{
     contactNumber: string;
 }
 
-export interface Setting {
-    settingName: string;
-    value: string;
-}
 
 export interface meterReading {
     customer_id: number;

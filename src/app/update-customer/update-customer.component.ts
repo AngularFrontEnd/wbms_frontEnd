@@ -8,16 +8,6 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class UpdateCustomerComponent implements OnInit {
 
-  firstName;
-  lastName;
-  middleinitial;
-  gender;
-  contactNumber;
-  email;
-  address;
-  usertype;
-  city;
-
 
   constructor(
     public authServiceService: AuthServiceService
@@ -25,6 +15,8 @@ export class UpdateCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.authServiceService.authenticate('update-customer')
+    
+
   }
 
 }

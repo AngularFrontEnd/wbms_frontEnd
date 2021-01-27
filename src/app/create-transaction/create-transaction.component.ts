@@ -38,6 +38,11 @@ export class CreateTransactionComponent implements OnInit {
     })
     console.log(this.customerArray);
 
+
+ 
+  }
+  getDataToView(data:any){
+    
   }
 
 }

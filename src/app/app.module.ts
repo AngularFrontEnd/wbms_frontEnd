@@ -4,8 +4,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import {NgxPaginationModule} from 'ngx-pagination';
-import  * as $  from 'jquery';
+import { NgxPaginationModule } from 'ngx-pagination';
+// import  * as $  from 'jquery';
 // import {NgxPrintModule} from 'ngx-print';
 // import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -22,6 +22,7 @@ import { MeterReadingComponent } from './meter-reading/meter-reading.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
     MeterReadingComponent,
     RegisterEmployeeComponent,
     CustomerViewComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    MyProfileComponent
     
   ],
   imports: [
