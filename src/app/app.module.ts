@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 // import {NgxPrintModule} from 'ngx-print';
 // import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -47,6 +48,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule
     
   ],
   providers: [],

@@ -36,6 +36,7 @@ export class RegisterEmployeeComponent implements OnInit {
 
   getEmployeeData(data: any) {
     this.wbmsService.addEmployee(this.urlAddEmployee, data).subscribe(data => {
+      // this.router.navigate(['/employee-records']);
       console.log(data);
 
     })

@@ -27,7 +27,8 @@ export class LandingPageComponent implements OnInit {
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septermber', 'October', 'November', 'December'],
         datasets: [{
-          label: '# of Votes',
+          xAxes: 'Months',
+          label: 'Yearly Report',
           data: [12, 19, 3, 5, 2, 3, 20, 10, 15, 8, 11, 6],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

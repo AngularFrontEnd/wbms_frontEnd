@@ -18,6 +18,10 @@ export class AppComponent {
     public authServiceService: AuthServiceService
   ) { }
 
+  accountName;
+  ngOnInit(): void {
+    this.accountName = localStorage.getItem("UserId");
+  }
 
   logOut() {
     localStorage.removeItem("Authorization");

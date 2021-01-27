@@ -11,7 +11,7 @@
             <div class="p-2"><a [routerLink]="['/register-employee']"><button class="btn btn-primary ">Register New
                         Employee</button></a></div>
         </div>
-        <div class="row m-2 employeeCard" *ngFor="let staff of staffDataArray">
+        <div class="row m-2 employeeCard" *ngFor="let staff of staffDataArray | paginate: { itemsPerPage: 6, currentPage: p }">
             <div style="width: 18rem">
                 <div class="row bg-light">
                     <div class="d-flex">
@@ -30,6 +30,9 @@
                     <p><i class="fas fa-map-marker-alt ml-3"></i>&nbsp;&nbsp;{{ staff.address }}</p>
                 </div>
             </div>
+        </div>
+        <div>
+            <pagination-controls (pageChange)="p = $event" class="pagination float-right"></pagination-controls>
         </div>
     </div>
 
