@@ -6,30 +6,31 @@
         <hr>
         <div class="form-row">
             <input [ngModel]="recordedBy" type="hidden" name="recordedBy">
-            <div class="form-group col-md-12 inputLabel">
-                <label for="houseId">House Id</label>
-                <input [ngModel]="customer_id" name="customer_id" type="text" class="form-control " id="customer_id">
+            <div class="w-100 bg-white py-1 rounded">
+                <ng-multiselect-dropdown name = "customer_id"  [placeholder]="'Customer'" [settings]="dropdownSettings" [data]="dropdownList"
+                    ngModel>
+                </ng-multiselect-dropdown>
             </div>
+            <span class="text-danger" *ngIf="emptyCustomerId">Customer is required</span>
             <div class="form-group col-md-12 inputLabel">
                 <label for="meterReading">Meter Reading</label>
                 <input [ngModel]="meterReading" name="meterReading" type="text" class="form-control " id="meterReading">
             </div>
+            <span class="text-danger" *ngIf="emptyMeterReading">Meter Reading is required</span>
             <div class="form-group col-md-12 inputLabel">
                 <label for="meterReading">Reading Date</label>
                 <!-- <input [ngModel]="reading_date" name="reading_date" type="date" class="form-control " id="readingDate"> -->
-                <input
-                    class="mt-4 form-control reading_date"
-                    type="date"
-                    id="reading_date"
-                    max="{{ today }}"
-                    ngModel
-                    name="reading_date"
-                  />
+                <input class="mt-4 form-control reading_date" type="date" id="reading_date" max="{{ today }}" ngModel
+                    name="reading_date" />
             </div>
+            <span class="text-danger" *ngIf="emptyReadingDate">Reading date is required</span>
+           
         </div>
         <!-- Button -->
-        <div class="form-row d-flex flex-row-reverse">
-            <div class="p-2"><button type="submit" class="btn btn-primary  mt-3 mb-5" [routerLink]="['/create-transaction']">Save</button></div>
+        <div class="form-row d-flex flex-row-reverse" >
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status" *ngIf = "saving">
+                      </div>
+            <div class="p-2"><button type="submit" class="btn btn-primary  mt-3 mb-5">Save</button></div>
             <div class="p-2"><button class="btn btn-danger  mx-2 mt-3 mb-5" [routerLink]="['/create-transaction']">Cancel</button></div>
         </div>
     </form>

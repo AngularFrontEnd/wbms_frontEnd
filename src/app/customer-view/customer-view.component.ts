@@ -17,9 +17,6 @@ export class CustomerViewComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-
-  // dataToView;
-  // dataToViewArray=[];
   
   //variables (Customer)
   firstName;

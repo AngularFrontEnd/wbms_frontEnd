@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Router} from '@angular/router';
 import { AuthServiceService } from '../auth-service.service'
+// import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -19,6 +21,8 @@ y
 
   username;
   password;
+
+  
   
   ngOnInit(): void {
     
