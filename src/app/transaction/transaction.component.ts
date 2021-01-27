@@ -22,6 +22,8 @@ export class TransactionComponent implements OnInit {
   transactionRecords: TransactionRecords[];
   paidTransactionArray = [];
 
+  p: number = 1;
+
   ngOnInit(): void {
     this.authServiceService.authenticate('transaction')
 

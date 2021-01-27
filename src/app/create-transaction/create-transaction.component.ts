@@ -24,7 +24,8 @@ export class CreateTransactionComponent implements OnInit {
   pendingData;
   createTransaction: CreateTransaction[];
   customerArray = [];
-
+  
+  p: number = 1;
 
   ngOnInit(): void {
     this.authServiceService.authenticate('create-transaction')

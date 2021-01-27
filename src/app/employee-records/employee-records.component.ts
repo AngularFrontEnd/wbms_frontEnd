@@ -25,6 +25,8 @@ export class EmployeeRecordsComponent implements OnInit {
   staffs: Staff[];
   staffDataArray = [];
 
+  p: number = 1;
+
 
   ngOnInit(): void {
     this.authServiceService.authenticate('employee-records')   
