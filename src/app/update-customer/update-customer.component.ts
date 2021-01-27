@@ -29,8 +29,7 @@ export class UpdateCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.authServiceService.authenticate('update-customer')
-
-    
+  
   }
 
   
