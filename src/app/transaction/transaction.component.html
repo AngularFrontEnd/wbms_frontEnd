@@ -26,7 +26,7 @@
                         <th scope="col">Transacted By</th>
                     </tr>
                 </thead>
-                <tbody id="tbody" *ngFor="let transactionRecord of paidTransactionArray | paginate: { itemsPerPage: 12, currentPage: p }">
+                <tbody id="tbody" *ngFor="let transactionRecord of paidTransactionArray | paginate: { itemsPerPage: 12, currentPage: page }">
                     <td>{{transactionRecord.houseNumber}}</td>
                     <td>{{transactionRecord.customerName}}</td>
                     <td>{{transactionRecord.address}}</td>
@@ -38,7 +38,7 @@
                 </tbody>
             </table>
         </div>
-        <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+        <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
         <!-- <div class="d-flex justify-content-end my-2">
             <button class="btn btn-primary mr-3">Previous</button>
             <button class="btn btn-primary">Next</button>

@@ -24,20 +24,16 @@
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody id="tbody" *ngFor="let customer of customerArray | paginate: { itemsPerPage: 12, currentPage: p }">
+                <tbody id="tbody" *ngFor="let customer of customerArray | paginate: { itemsPerPage: 12, currentPage: page }">
                     <td>{{customer.firstName}}</td>
                     <td>{{customer.lastName}}</td>
                     <td>{{customer.email}}</td>
                     <td class="text-center">{{customer.contactNumber}}</td>
                     <td>{{customer.address}}</td>
-                    <a class="btn btn-primary my-2 ml-2" href ="customer-view?householdID={{customer.id}}" >view</a>
+                    <a class="btn btn-primary my-2 ml-2" href ="customer-view?householdID={{customer.id}}&parent=1" >view</a>
                 </tbody>
             </table>
         </div>
-        <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
-        <!-- <div class="d-flex justify-content-end my-2">
-            <button class="btn btn-primary mr-3">Previous</button>
-            <button class="btn btn-primary">Next</button>
-        </div> -->
+        <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
     </div>
 </div>

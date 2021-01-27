@@ -11,7 +11,7 @@ export class WbmsService {
     private http: HttpClient
   ) { }
 
-
+  
   getData(url: string) {
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
@@ -24,7 +24,7 @@ export class WbmsService {
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
-    return this.http.get(url + `${id}`, { headers: httpHeaders });
+    return this.http.get(url + `/${id}`, { headers: httpHeaders });
   }
 
   addEmployee(url: string , body) {

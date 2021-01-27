@@ -28,7 +28,7 @@ y
   onSubmit(data : any){
     this.http.post('https://wbm-system.herokuapp.com/api/login',data)
     .subscribe((result)=>{
-      console.log(result['user']['id']);
+      // console.log(result['user']['id']);
 
       localStorage.setItem( "Authorization" , result['token']);
       localStorage.setItem( "UserId", result['user']['id']);

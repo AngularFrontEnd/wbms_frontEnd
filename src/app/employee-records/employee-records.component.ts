@@ -25,7 +25,11 @@ export class EmployeeRecordsComponent implements OnInit {
   staffs: Staff[];
   staffDataArray = [];
 
-  p: number = 1;
+  page = 1;
+
+  pageChange(page:Event){
+    page= page;
+  }
 
 
   ngOnInit(): void {

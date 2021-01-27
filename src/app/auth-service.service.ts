@@ -14,6 +14,7 @@ export class AuthServiceService {
     if(localStorage.getItem ('Authorization') != null) {
       this.isAuthenticated =true;
       this.userLogged = localStorage.getItem("UserFullName");
+      // console.log(link)
       this.router.navigate([link])
       return true;
     }

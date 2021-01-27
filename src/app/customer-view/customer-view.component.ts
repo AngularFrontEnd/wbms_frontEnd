@@ -17,22 +17,27 @@ export class CustomerViewComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  private urlGet = 'https://wbm-system.herokuapp.com/api/customer/show/'
-  id;
+
+  // dataToView;
+  // dataToViewArray=[];
+  
+  //variables (Customer)
+  firstName;
+  lastName;
+  customerId;
+  contactNum;
+  email;
+  address;
+  transactionInfo;
+
 
   ngOnInit(): void {
     const householdID: string = this.route.snapshot.queryParamMap.get(
       'householdID')
-    console.log(householdID)
-
     this.authServiceService.authenticate("customer-view?householdID=" + householdID)
-
-
-    this.wbmsService.getDatatoView(this.urlGet, householdID).subscribe(result => {
-      // this.id = data;
-      // console.log(this.id);
-      console.log(result)
-    })
+    this.loadCustomerInfo(householdID);
+    this.loadPendingTransaction(householdID);
+    
   }
 
   navigate(){
@@ -42,8 +47,31 @@ export class CustomerViewComponent implements OnInit {
     if(parent == '1'){
         this.router.navigate(['/create-transaction'])
     }else{
-
+        this.router.navigate(['/customer'])
     }
+  }
+
+  loadCustomerInfo(householdID){
+    let customerInfo;
+    let urlGet = 'https://wbm-system.herokuapp.com/api/customer/show'
+    this.wbmsService.getDatatoView(urlGet, householdID).subscribe(result => {
+      customerInfo = result;
+      this.firstName = customerInfo.firstName 
+      this.lastName =  customerInfo.lastName;
+      this.customerId = customerInfo.id;
+      this.contactNum = customerInfo.contactNumber;
+      this.email = customerInfo.email;
+      this.address = customerInfo.address;
+    })
+  }
+
+
+  loadPendingTransaction(householdID){
+    let urlGet = 'https://wbm-system.herokuapp.com/api/transaction/show-pending-transaction'
+    this.wbmsService.getDatatoView(urlGet, householdID).subscribe(result => {
+      this.transactionInfo = result;
+      console.log(this.transactionInfo)
+    })
   }
 
 }

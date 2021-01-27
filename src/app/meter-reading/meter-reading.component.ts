@@ -29,7 +29,7 @@ export class MeterReadingComponent implements OnInit {
     this.authServiceService.authenticate('meter-reading');
     let date = new Date();
     this.today = date.getFullYear() + '-' + date.getMonth() + 1 + '-' + date.getDate();
-    this.authServiceService.authenticate('register-reading');
+    this.authServiceService.authenticate('meter-reading');
   }
 
   customer_id;

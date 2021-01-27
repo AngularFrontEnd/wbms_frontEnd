@@ -22,7 +22,10 @@ export class TransactionComponent implements OnInit {
   transactionRecords: TransactionRecords[];
   paidTransactionArray = [];
 
-  p: number = 1;
+  page = 1;
+  pageChange(page:Event){
+    page= page;
+  }
 
   ngOnInit(): void {
     this.authServiceService.authenticate('transaction')

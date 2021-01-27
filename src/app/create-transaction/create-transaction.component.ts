@@ -18,26 +18,27 @@ export class CreateTransactionComponent implements OnInit {
     public authServiceService: AuthServiceService 
   ) { }
 
-  private url = 'https://wbm-system.herokuapp.com/api/transaction/pending-transaction';
-
-
+  
+  private urlGet = "https://wbm-system.herokuapp.com/api/transaction/pending-transaction"
   pendingData;
   createTransaction: CreateTransaction[];
   customerArray = [];
   
-  p: number = 1;
-
+  page = 1;
+  
+  pageChange(page:Event){
+    page= page;
+  }
+  
   ngOnInit(): void {
     this.authServiceService.authenticate('create-transaction')
-    
-    this.wbmsService.getData(this.url).subscribe(data => {
+    this.wbmsService.getData(this.urlGet).subscribe(data => {
       this.pendingData = data;
+      console.log(data);
       this.pendingData.forEach(element => {
         this.customerArray.push(element.customer)
       });
     })
-    // console.log(this.customerArray);
-
-  
+    
   }
 }
