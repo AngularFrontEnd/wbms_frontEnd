@@ -22,8 +22,11 @@ export class CustomerComponent implements OnInit {
   customerData;
   customers: Customer[];
 
-  p=1
+  page=1;
 
+  pageChange(page:Event){
+    page= page;
+  }
 
   ngOnInit(): void {
     this.authServiceService.authenticate('customer')
