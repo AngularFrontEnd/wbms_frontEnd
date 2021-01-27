@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceService } from '../auth-service.service';
+import { Router } from '@angular/router';
+import { WbmsService } from '../wbms.service';
+import { AuthServiceService } from '../auth-service.service'
 
 @Component({
   selector: 'app-update-customer',
@@ -8,15 +10,28 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class UpdateCustomerComponent implements OnInit {
 
+  firstName;
+  lastName;
+  middleinitial;
+  gender;
+  contactNumber;
+  email;
+  address;
+  usertype;
+  city;
+
 
   constructor(
-    public authServiceService: AuthServiceService
+    public authServiceService: AuthServiceService,
+    private wbmsService: WbmsService,
+
   ) { }
 
   ngOnInit(): void {
     this.authServiceService.authenticate('update-customer')
-    
 
+    
   }
 
+  
 }

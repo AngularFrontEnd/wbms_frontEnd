@@ -84,17 +84,14 @@ export class LandingPageComponent implements OnInit {
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
 
-    // console.log('Bearer '+localStorage.getItem("Authorization"))
     let numCus;
     this.http
       .get('https://wbm-system.herokuapp.com/api/customer', {
         headers: httpHeaders
       })
       .subscribe(result => {
-        console.log(result);
         numCus = result;
         this.numberCustomer = numCus.length
-        console.log(this.numberCustomer)
       });
     let numTrans;
     this.http
@@ -102,10 +99,8 @@ export class LandingPageComponent implements OnInit {
         headers: httpHeaders
       })
       .subscribe(result => {
-        console.log(result);
         numTrans = result;
         this.transactionRecordsNumber = numTrans.length
-        console.log(this.numberCustomer)
       });
     let numUser;
     this.http
@@ -113,10 +108,8 @@ export class LandingPageComponent implements OnInit {
         headers: httpHeaders
       })
       .subscribe(result => {
-        console.log(result);
         numUser = result;
         this.employeeNumber = numUser.length
-        console.log(this.employeeNumber);
       });
   }
 

@@ -13,7 +13,7 @@ export class AuthServiceService {
   authenticate(link) :boolean {
     if(localStorage.getItem ('Authorization') != null) {
       this.isAuthenticated =true;
-      this.userLogged = localStorage.getItem("User");
+      this.userLogged = localStorage.getItem("UserFullName");
       this.router.navigate([link])
       return true;
     }
