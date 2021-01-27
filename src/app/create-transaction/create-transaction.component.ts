@@ -36,13 +36,8 @@ export class CreateTransactionComponent implements OnInit {
         this.customerArray.push(element.customer)
       });
     })
-    console.log(this.customerArray);
+    // console.log(this.customerArray);
 
-
- 
+  
   }
-  getDataToView(data:any){
-    
-  }
-
 }

@@ -32,7 +32,7 @@ y
 
       localStorage.setItem( "Authorization" , result['token']);
       localStorage.setItem( "UserId", result['user']['id']);
-      localStorage.setItem( "UserFullName" , result['user']['firstName']+" "+result['user']['firstName']);
+      localStorage.setItem( "UserFullName" , result['user']['firstName']+" "+result['user']['lastName']);
 
       if (localStorage.getItem("Authorization") != null) {
         this.authService.authenticate('dashboard')

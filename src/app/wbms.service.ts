@@ -16,23 +16,15 @@ export class WbmsService {
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
-    console.log(httpHeaders)
-    console.log(url)
-    console.log('Bearer ' + localStorage.getItem("Authorization"))
 
     return this.http.get(url, { headers: httpHeaders });
   }
 
-  getDatatoView(url: string, body){
-    console.log(body)
+  getDatatoView(url: string, id){
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
-    console.log(httpHeaders)
-    console.log(url)
-    console.log('Bearer ' + localStorage.getItem("Authorization"))
-
-    return this.http.get(url, { headers: httpHeaders });
+    return this.http.get(url + `${id}`, { headers: httpHeaders });
   }
 
   addEmployee(url: string , body) {
@@ -40,9 +32,6 @@ export class WbmsService {
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
-    console.log(httpHeaders)
-    console.log(url)
-    console.log('Bearer ' + localStorage.getItem("Authorization"))
 
     return this.http.post(url, body,{ headers: httpHeaders , responseType: "text" });
   }
@@ -52,9 +41,6 @@ export class WbmsService {
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
-    console.log(httpHeaders)
-    console.log(url)
-    console.log('Bearer ' + localStorage.getItem("Authorization"))
 
     return this.http.post(url, body,{ headers: httpHeaders , responseType: "text" });
   }
@@ -64,9 +50,6 @@ export class WbmsService {
     const httpHeaders = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem("Authorization")
     });
-    console.log(httpHeaders)
-    console.log(url)
-    console.log('Bearer ' + localStorage.getItem("Authorization"))
 
     return this.http.post(url, body,{ headers: httpHeaders , responseType: "text" });
   }

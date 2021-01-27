@@ -22,6 +22,8 @@ export class CustomerComponent implements OnInit {
   customerData;
   customers: Customer[];
 
+  p=1
+
 
   ngOnInit(): void {
     this.authServiceService.authenticate('customer')
