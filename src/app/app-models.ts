@@ -61,10 +61,15 @@ export interface Staff{
     firstName: string;
     lastName: string;
     gender: string;
-    userType: string;
+    usertype: string;
     email: string;
     address: string;
     contactNumber: string;
+}
+
+export interface Setting {
+    settingName: string;
+    value: string;
 }
 
 export interface meterReading {

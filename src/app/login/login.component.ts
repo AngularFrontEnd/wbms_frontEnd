@@ -10,7 +10,7 @@ import { AuthServiceService } from '../auth-service.service'
 })
 
 export class LoginComponent implements OnInit {
-
+y
   constructor(
     private http:HttpClient, 
     private router:Router,
